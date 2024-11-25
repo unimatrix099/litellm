@@ -381,7 +381,7 @@ class AzureChatCompletion(BaseLLM):
 
             ### CHECK IF CLOUDFLARE AI GATEWAY ###
             ### if so - set the model as part of the base url
-            if "gateway.ai.cloudflare.com" in api_base:
+            if api_base and "gateway.ai.cloudflare.com" in api_base:
                 ## build base url - assume api base includes resource name
                 if client is None:
                     if not api_base.endswith("/"):
